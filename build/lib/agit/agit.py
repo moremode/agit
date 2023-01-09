@@ -71,6 +71,7 @@ def main(m, add, clear, n, s):
             else:
                 print(f"Create new origin. Example")
                 print("  agit --add \"origin master\"")
+    if (not add and not clear and not m and not s):    
         print("Nothing to do. Print '--help'")
 
 if __name__ == "__main__":
