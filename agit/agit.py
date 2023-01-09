@@ -59,10 +59,13 @@ def main(m, add, clear, n, s):
     if (m):
         origins = db.get()
         if (n > 0 and n <= len(origins)):
+            click.secho("git add .", fg="yellow")
             s = subprocess.Popen("git add .", shell=True)
             s.wait()
+            click.secho(f'git commit -m "{m}"', fg="yellow")
             s = subprocess.Popen(f'git commit -m "{m}"', shell=True)
             s.wait()
+            click.secho(f"git push {origins[n-1][0]}", fg="yellow")
             s = subprocess.Popen(f"git push {origins[n-1][0]}", shell=True)
             s.wait()
         else:
